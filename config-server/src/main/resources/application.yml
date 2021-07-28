@@ -7,5 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/pedrootavio/microservice-repo
-          search-paths: fornecedor
+          uri: https://github.com/pedrootavio/microservice-repo.git
+          default-label: main
+          search-paths: fornecedor, loja
