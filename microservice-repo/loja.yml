@@ -1,8 +1,0 @@
-spring:
-  datasource:
-    password: root
-    username: root
-    url: jdbc:mysql://localhost:3306/loja #Antes crie o banco de dados "loja"
-  jpa:
-    hibernate:
-      ddl-auto: update #Use "create" na primeira vez depois "update"
