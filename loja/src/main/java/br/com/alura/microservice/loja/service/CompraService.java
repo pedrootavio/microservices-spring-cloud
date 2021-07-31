@@ -7,7 +7,6 @@ import br.com.alura.microservice.loja.dto.InfoPedidoDTO;
 import br.com.alura.microservice.loja.model.Compra;
 import br.com.alura.microservice.loja.repository.CompraRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +43,7 @@ public class CompraService {
         Compra compraSalva = new Compra();
         compraSalva.setPedidoId(infoPedido.getId());
         compraSalva.setTempoDePreparo(infoPedido.getTempoDePreparo());
-        compraSalva.setEnderecoDestino(info.getEndereco());
+        compraSalva.setEnderecoDestino(compra.getEndereco().toString());
         compraRepository.save(compraSalva);
 
         return compraSalva;
