@@ -9,4 +9,4 @@ spring:
         git:
           uri: https://github.com/pedrootavio/microservice-repo.git
           default-label: main
-          search-paths: fornecedor, loja
+          search-paths: fornecedor, loja, transportador
