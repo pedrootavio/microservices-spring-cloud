@@ -15,4 +15,4 @@
 [Curso da Alura de Microservices com Spring Cloud: Circuit Breaker, Hystrix e API Gateway](https://cursos.alura.com.br/course/microservices-spring-cloud-circuit-breaker-api-gateway)
 
 #### Transcrição:  
-> Em andamento.
+> Concluído.

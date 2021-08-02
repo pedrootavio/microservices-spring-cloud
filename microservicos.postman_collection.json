@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "f0507f28-fbbd-4904-b5a3-d286dc3c8569",
+		"name": "microservicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOJA - compra",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/loja/compra/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"loja",
+						"compra",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOJA - compra",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "afbd4a01-c328-404b-a3b7-b2cd2db5f362",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itens\": [\n        {\n            \"id\": 3,\n            \"quantidade\": 6\n        },\n        {\n            \"id\": 1,\n            \"quantidade\": 15\n        }\n    ],\n    \"endereco\": {\n        \"rua\": \"Rua da Mariana\",\n        \"numero\": 101,\n        \"estado\": \"DF\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/loja/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"loja",
+						"compra"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "LOJA - compra_1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itens\": [\n        {\n            \"id\": 3,\n            \"quantidade\": 6\n        },\n        {\n            \"id\": 1,\n            \"quantidade\": 15\n        }\n    ],\n    \"endereco\": {\n        \"rua\": \"Rua da Mariana\",\n        \"numero\": 101,\n        \"estado\": \"DF\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/compra",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"compra"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Dec 2020 01:43:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2020-12-17T01:43:01.196+0000\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"realizaCompra timed-out and fallback failed.\",\n    \"path\": \"/compra\"\n}"
+				}
+			]
+		},
+		{
+			"name": "FORNECEDOR - info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/info/GO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"info",
+						"GO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FORNECEDOR - produto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/produto/df",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"produto",
+						"df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FORNECEDOR - pedido",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "afbd4a01-c328-404b-a3b7-b2cd2db5f362",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 3,\n        \"quantidade\": 6\n    },\n    {\n        \"id\": 1,\n        \"quantidade\": 15\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5555/fornecedor/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"fornecedor",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EUREKA - apps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8761/eureka/apps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONFIG-SERVER - loja",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/loja/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"loja",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONFIG-SERVER - fornecedor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/fornecedor/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"fornecedor",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONFIG-SERVER - transportador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/transportador/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"transportador",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ZUUL - Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/actuator/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"actuator",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH - Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lojapwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "loja",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "scope",
+							"value": "web",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "joao",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "joaopwd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8088/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AUTH - User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "afbd4a01-c328-404b-a3b7-b2cd2db5f362",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8088/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
